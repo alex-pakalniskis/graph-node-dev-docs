@@ -33,6 +33,10 @@ type Gravatar @entity(immutable: true) {
 }
 ```
 
+### Reduce number (or entirely avoid) [eth\_calls](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_call)
+
+Alternatively, leverage declarative eth\_calls for speed improvements through parallelization
+
 ### Avoid large arrays
 
 TODO
@@ -42,7 +46,3 @@ TODO
 TODO
 
 [https://github.com/graphprotocol/graph-node/blob/master/docs/aggregations.md](https://github.com/graphprotocol/graph-node/blob/master/docs/aggregations.md)
-
-### Reduce number (or entirely avoid) [eth\_calls](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_call)
-
-Alternatively, leverage declarative eth\_calls for speed improvements through parallelization
