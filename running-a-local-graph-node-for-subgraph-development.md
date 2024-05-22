@@ -1,8 +1,11 @@
 # Running a local Graph Node for subgraph development
 
-### Prerequisites
+### Installation prerequisites
 
-* Install [Docker](https://docs.docker.com/get-docker/)
+* [Docker](https://docs.docker.com/get-docker/)
+* [Node.js](https://nodejs.org/en/download/package-manager)
+* [Graph CLI](https://www.npmjs.com/package/@graphprotocol/graph-cli)
+* [Hardhat](https://hardhat.org/hardhat-network/docs/overview#running-stand-alone-in-order-to-support-wallets-and-other-software)
 
 ### Getting started
 
@@ -10,11 +13,19 @@
 # Download docker-compose.yml for Graph Node & dependencies
 git clone https://github.com/graphprotocol/graph-node.git
 
-# Modify docker-compose.yml with your JSON RPC endpoint(s) for your network(s) of interest and save the changes
-nano docker/docker-compose.yml
+# Run Hardhat in standalone mode
+npx hardhat node
  
 # Start IPFS, PostgreSQL, and Graph Node
 docker-compose up
+
+# Create a subgraph
+# Replace <CONTRACT_ADDRESS> with the address of the smart contract you want to index, and <GITHUB_USERNAME>/<SUBGRAPH_NAME> with your GitHub username and subgraph name.
+graph init --from-contract <CONTRACT_ADDRESS> --network mainnet <GITHUB_USERNAME>/<SUBGRAPH_NAME>
+
+# Deploy subgraph locally
+graph deploy <GITHUB_USERNAME>/<SUBGRAPH_NAME> --node http://127.0.0.1:8020 --ipfs http://127.0.0.1:5001
+
 ```
 
 
