@@ -1,4 +1,4 @@
-# Running a local Graph Node for subgraph development
+# Running a local Graph Node and Hardhat node for subgraph development
 
 ### Installation prerequisites
 
