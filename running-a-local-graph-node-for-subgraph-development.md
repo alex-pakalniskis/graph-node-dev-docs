@@ -20,7 +20,9 @@ npx hardhat node
 cd graph-node
 docker-compose up
 
-# Create a subgraph. Replace <CONTRACT_ADDRESS> with the address of the smart contract you want to index, and <GITHUB_USERNAME>/<SUBGRAPH_NAME> with your GitHub username and subgraph name.
+# Create a subgraph. 
+# Replace <CONTRACT_ADDRESS> with the address of the smart contract you want to index
+# Replace <GITHUB_USERNAME>/<SUBGRAPH_NAME> with your GitHub username and subgraph name.
 graph init --from-contract <CONTRACT_ADDRESS> --network mainnet <GITHUB_USERNAME>/<SUBGRAPH_NAME>
 
 # Deploy subgraph locally
