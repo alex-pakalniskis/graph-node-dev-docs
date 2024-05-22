@@ -26,16 +26,4 @@ graph init --from-contract <CONTRACT_ADDRESS> --network mainnet <GITHUB_USERNAME
 
 # Deploy subgraph locally
 graph deploy <GITHUB_USERNAME>/<SUBGRAPH_NAME> --node http://127.0.0.1:8020 --ipfs http://127.0.0.1:5001
-
 ```
-
-
-
-***
-
-Existing content
-
-* [https://github.com/graphprotocol/graph-node/blob/master/README.md#running-a-local-graph-node](https://github.com/graphprotocol/graph-node/blob/master/README.md#running-a-local-graph-node)
-* [https://github.com/graphprotocol/graph-node/blob/master/docker/README.md](https://github.com/graphprotocol/graph-node/blob/master/docker/README.md)
-* [https://github.com/graphprotocol/graph-node/blob/master/docs/getting-started.md](https://github.com/graphprotocol/graph-node/blob/master/docs/getting-started.md)
-* [https://github.com/graphprotocol/graph-node/blob/master/docs/config.md](https://github.com/graphprotocol/graph-node/blob/master/docs/config.md)
