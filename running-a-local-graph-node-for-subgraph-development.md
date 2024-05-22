@@ -25,6 +25,8 @@ docker-compose up
 # Replace <GITHUB_USERNAME>/<SUBGRAPH_NAME> with your GitHub username and subgraph name.
 graph init --from-contract <CONTRACT_ADDRESS> --network mainnet <GITHUB_USERNAME>/<SUBGRAPH_NAME>
 
+# Define your subgraph manifest, GraphQL schema, and AssemblyScript mappings
+
 # Deploy subgraph locally
 graph deploy <GITHUB_USERNAME>/<SUBGRAPH_NAME> --node http://127.0.0.1:8020 --ipfs http://127.0.0.1:5001
 ```
