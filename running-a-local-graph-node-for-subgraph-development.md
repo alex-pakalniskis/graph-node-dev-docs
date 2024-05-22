@@ -10,13 +10,14 @@
 ### Getting started
 
 ```bash
-# Download docker-compose.yml for Graph Node & dependencies
+# Clone the Graph Node repository
 git clone https://github.com/graphprotocol/graph-node.git
 
 # Run Hardhat in standalone mode
 npx hardhat node
  
 # Start IPFS, PostgreSQL, and Graph Node
+cd graph-node
 docker-compose up
 
 # Create a subgraph
