@@ -58,6 +58,32 @@ Strategies
 
 ### Aggregations
 
-TODO
+> Aggregations are declared in the subgraph schema through two types: one that stores the raw data points for the time series, and one that defines how raw data points are to be aggregated.\
+> \
+> A timeseries is an entity type with the annotation `@entity(timeseries: true)`. It must have an `id` attribute of type `Int8` and a `timestamp` attribute of type `Timestamp`. It must not also be annotated with `immutable: false` as timeseries are always immutable.
+>
+> \
+> An aggregation is defined with an `@aggregation` annotation. The annotation must have two arguments:
+>
+> * `intervals`: a non-empty array of intervals; currently, only `hour` and `day` are supported
+> * `source`: the name of a timeseries type. Aggregates are computed based on the attributes of the timeseries type.
+>
+> The aggregation type must have an `id` attribute of type `Int8` and a `timestamp` attribute of type `Timestamp`.
+>
+> \- [The Graph docs](https://github.com/graphprotocol/graph-node/blob/master/docs/aggregations.md)
 
-[https://github.com/graphprotocol/graph-node/blob/master/docs/aggregations.md](https://github.com/graphprotocol/graph-node/blob/master/docs/aggregations.md)
+Example
+
+```graphql
+type Data @entity(timeseries: true) {
+  id: Int8!
+  timestamp: Timestamp!
+  price: BigDecimal!
+}
+
+type Stats @aggregation(intervals: ["hour", "day"], source: "Data") {
+  id: Int8!
+  timestamp: Timestamp!
+  sum: BigDecimal! @aggregate(fn: "sum", arg: "price")
+}
+```
