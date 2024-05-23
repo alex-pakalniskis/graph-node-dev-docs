@@ -46,7 +46,16 @@ Strategies
 
 ### Avoid large arrays
 
-TODO
+> When we access an array of an entity we are actually getting a copy of that data. Therefore, if we update the data and save the entity, we are simply making a copy of the array, while the original is left unchanged. This is not a problem for small arrays with fewer than 50 or so entries. However, if it contains a larger amount of data and changes frequently it will bloat the database.\
+> \
+> The reason for this is because of a powerful capability in Graph Node known as["time-travel queries."](https://github.com/graphprotocol/graph-node/pull/1397) Originally implemented so that Graph Node can handle chain reorgs and ensure data accuracy by tracking state at a certain block number and block hash, this feature also empowered users to query the subgraph at any specific point in time, giving access to rich historical data. In order to achieve this, Graph Node is keeping track of all the changes within all the entities for any given subgraph.
+>
+> \- [The Graph docs](https://thegraph.com/blog/improve-subgraph-performance-avoiding-large-arrays/)
+
+Strategies
+
+* Use `derivedFrom` and `loadRelated` to perform reverse lookups on subgraph entities
+*
 
 ### Aggregations
 
