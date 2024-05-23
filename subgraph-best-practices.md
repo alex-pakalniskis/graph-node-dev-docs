@@ -35,7 +35,9 @@ type Gravatar @entity(immutable: true) {
 
 ### Reduce number (or entirely avoid) [eth\_calls](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_call)
 
-Alternatively, leverage declarative eth\_calls for speed improvements through parallelization
+> Many smart contracts do not emit all necessary data in their events directly. To determine the new smart contract state after a completed transaction, it is often necessary to send an [eth\_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_call) back to the smart contract to retrieve that data. However, JSON RPC calls are generally slow. Each call usually takes 100ms up to several seconds to resolve. That’s why developers are discouraged from using them at all in their UIs for displaying information. These eth\_calls are also slow if they run as part of the mappings inside the Graph Node.
+>
+> \- [The Graph docs](https://thegraph.com/blog/improve-subgraph-performance-reduce-eth-calls/)
 
 ### Avoid large arrays
 
