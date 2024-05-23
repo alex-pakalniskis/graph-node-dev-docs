@@ -39,6 +39,11 @@ type Gravatar @entity(immutable: true) {
 >
 > \- [The Graph docs](https://thegraph.com/blog/improve-subgraph-performance-reduce-eth-calls/)
 
+Strategies
+
+* Only do `eth_calls` once and cache the result or store in DB
+* Use data from the event itself and calculate information in the subgraph
+
 ### Avoid large arrays
 
 TODO
